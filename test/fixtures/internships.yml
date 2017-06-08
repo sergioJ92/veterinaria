@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  intership_date: 2017-06-05
+  dischargeDate: 2017-06-05
+  deail: MyString
+  pet: one
+
+two:
+  intership_date: 2017-06-05
+  dischargeDate: 2017-06-05
+  deail: MyString
+  pet: two

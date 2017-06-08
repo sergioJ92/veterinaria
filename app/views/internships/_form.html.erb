@@ -1,0 +1,55 @@
+<%= form_for @internship, :html => { :class => "form-horizontal internship" } do |f| %>
+
+  <% if @internship.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@internship.errors.count, "error") %> prohibited this internship from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @internship.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :intership_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :intership_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:intership_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dischargeDate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dischargeDate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dischargeDate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deail, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :deail, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:deail) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pet_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :pet_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:pet_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                internships_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
