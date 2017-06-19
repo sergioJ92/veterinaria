@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :veterinaries, :path => "veterinarios"  
   resources :services, :path => "servicios"  
   resources :type_services, :path => "tipo_servicios"   

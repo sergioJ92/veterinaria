@@ -1,6 +1,6 @@
 class TypeServicesController < ApplicationController
   before_action :set_type_service, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /type_services
   # GET /type_services.json
   def index
