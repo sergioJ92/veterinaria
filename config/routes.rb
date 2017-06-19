@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :type_products
   devise_for :users
   resources :veterinaries, :path => "veterinarios"  
   resources :services, :path => "servicios"  

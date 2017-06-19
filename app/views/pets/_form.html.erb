@@ -50,13 +50,8 @@
     </div>
     <%=f.error_span(:bornDate) %>
   </div>
-  <div class="form-group">
-    <%= f.label "Id Cliente", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :client_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:client_id) %>
-  </div>
+
+  <%= f.hidden_field :client_id, :value => current_user.id %>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
