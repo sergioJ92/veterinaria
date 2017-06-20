@@ -11,6 +11,7 @@
       <th><%= model_class.human_attribute_name("Género") %></th>
       <th><%= model_class.human_attribute_name("Raza") %></th>
       <th><%= model_class.human_attribute_name("Fecha de Nacimiento") %></th>
+      <th>Dia de alta</th>
       <th><%= model_class.human_attribute_name("Id Cliente") %></th>
       <th><%=t '.actions', :default => t("Acciones") %></th>
     </tr>
@@ -25,6 +26,11 @@
         <td><%= pet.race %></td>
         <td><%= pet.bornDate %></td>
         <td><%= pet.client_id %></td>
+        <% if pet.dischargeDate > Time.now.to_date %>
+          <td class="notification"><%= pet.dischargeDate %></td>
+        <%else%>
+          <td><%= 'Sin Novedades' %></td>
+        <%end%>
         <td>
           <%= link_to t('.show', :default => t("Mostrar")),
                       pet_path(pet), :class => 'btn btn-default btn-xs' %>
