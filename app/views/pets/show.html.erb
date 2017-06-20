@@ -18,6 +18,8 @@
   <dd><%= @pet.client_id %></dd>
 </dl>
 
+
+<%= link_to "Internar", new_internship_path(id: @pet.id) %>
 <%= link_to t('.back', :default => t("Volver")),
               pets_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("Editar")),

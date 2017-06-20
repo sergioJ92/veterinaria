@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :pets, :path => "mascotas"  
   resources :clients, :path => "clientes"  
   root 'pets#index'
+  get 'admin/users' => 'admin#convert'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

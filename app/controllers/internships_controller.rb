@@ -15,6 +15,8 @@ class InternshipsController < ApplicationController
   # GET /internships/new
   def new
     @internship = Internship.new
+    @internship.pet_id = params['id']
+    puts "=> #{@internship.to_json}"
   end
 
   # GET /internships/1/edit
@@ -25,7 +27,8 @@ class InternshipsController < ApplicationController
   # POST /internships.json
   def create
     @internship = Internship.new(internship_params)
-
+    
+    puts "=> #{@internship.to_json}"
     respond_to do |format|
       if @internship.save
         format.html { redirect_to @internship, notice: 'Internship was successfully created.' }

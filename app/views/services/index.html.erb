@@ -18,7 +18,7 @@
         <td><%= link_to service.id, service_path(service) %></td>
         <td><%= service.name %></td>
         <td><%= service.detail %></td>
-        <td><%= service.typeServices_id %></td>
+        <td><%= service.typeServices %></td>
         <td>
           <%= link_to t('.show', :default => t("Mostrar")),
                       service_path(service), :class => 'btn btn-default btn-xs' %>

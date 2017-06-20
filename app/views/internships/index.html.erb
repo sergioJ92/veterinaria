@@ -20,7 +20,7 @@
         <td><%= internship.intership_date %></td>
         <td><%= internship.dischargeDate %></td>
         <td><%= internship.deail %></td>
-        <td><%= internship.pet_id %></td>
+        <td><%= internship.pet.name %></td>
         <td>
           <%= link_to t('.show', :default => t("Mostrar")),
                       internship_path(internship), :class => 'btn btn-default btn-xs' %>
@@ -36,7 +36,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("Nueva Hospitalizacion")),
-            new_internship_path,
-            :class => 'btn btn-primary' %>

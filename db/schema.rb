@@ -73,19 +73,12 @@ ActiveRecord::Schema.define(version: 20170619220722) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.string "detail"
-    t.integer "typeServices_id"
+    t.string "typeServices"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["typeServices_id"], name: "index_services_on_typeServices_id"
   end
 
   create_table "type_products", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "type_services", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

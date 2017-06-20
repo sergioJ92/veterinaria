@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usuarios</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>email</th>
+      <th>role</th>
+      <th>id asociado</th>
+      <th>Convertir Veterinario</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role.name %></td>
+        <td><%= user.data_id %></td>
+        <td><%= link_to 'Convertir Veterinario', id: user.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

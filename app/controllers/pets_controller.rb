@@ -5,17 +5,17 @@ class PetsController < ApplicationController
   # GET /pets.json
   def index
     @pets = []
-    if !current_user.nil?
-      id = current_user.data_id
-      if !id.nil?
-        @client = Client.find(id)
-        @pets = @client.pets
-      end
-      if current_user.role.name == 'administrador'
+    if current_user.role.name != 'cliente'
         @pets = Pet.all
+    else
+      if !current_user.nil?
+        id = current_user.data_id
+        if !id.nil?
+          @client = Client.find(id)
+          @pets = @client.pets
+        end
       end
     end
-
   end
 
   # GET /pets/1
