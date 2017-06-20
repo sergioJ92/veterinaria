@@ -33,14 +33,13 @@
         <%end%>
         <td>
           <%= link_to t('.show', :default => t("Mostrar")),
-                      pet_path(pet), :class => 'btn btn-default btn-xs' %>
+                      pet_path(pet) %>
           <%= link_to t('.edit', :default => t("Editar")),
-                      edit_pet_path(pet), :class => 'btn btn-default btn-xs' %>
+                      edit_pet_path(pet) %>
           <%= link_to t('.destroy', :default => t("Eliminar")),
                       pet_path(pet),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Seguro?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Seguro?'))} %>
         </td>
       </tr>
     <% end %>
