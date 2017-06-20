@@ -18,7 +18,7 @@
     </div>
     <%=f.error_span(:ci) %>
   </div>
-
+  <%= f.hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= f.hidden_field :veterinary_id, :value => current_user.data_id %>
   <%= f.hidden_field :pet_id, :value => @pet.id %>
 
