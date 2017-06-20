@@ -39,9 +39,12 @@
 </table>
 
 
-
-<%= link_to "Internar", new_internship_path(id: @pet.id), :class => 'btn btn-default' %>
-<%= link_to "Servicio", "servicio/#{@pet.id}", :class => 'btn btn-default' %>
+<%if !current_user.nil? %>
+  <%if current_user.role.name != 'cliente' %>
+    <%= link_to "Internar", new_internship_path(id: @pet.id), :class => 'btn btn-default' %>
+    <%= link_to "Servicio", "servicio/#{@pet.id}", :class => 'btn btn-default' %>
+  <%end%>
+<%end%>
 
 <%= link_to t('.back', :default => t("Volver")),
               pets_path, :class => 'btn btn-default'  %>
