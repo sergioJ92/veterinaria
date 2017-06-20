@@ -27,12 +27,21 @@
         <a class="navbar-brand" href="#">Veterinaria</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Inicio", "/mascotas"  %></li>
-            <li><%= link_to "Servicios de Belleza", "/servicios"  %></li>
-            <li><%= link_to "Mascotas", "/mascotas"  %></li>
-            <li><%= link_to "Hospitalización", "/hospitalizaciones"  %></li>
-            <li><%= link_to "Veterinarios", "/veterinarios"  %></li>
-            <li><%= link_to "Almacenes", "#"  %></li>
+          <%if !current_user.nil? %>
+              <%if current_user.role.name == 'cliente' %>
+                <li><%= link_to "Inicio", "/mascotas"  %></li>    
+                <li><%= link_to "Almacenes", "#"  %></li>
+              <%elsif current_user.role.name == 'veterinario' %>
+                <li><%= link_to "Servicios", "/servicios"  %></li>
+                <li><%= link_to "Mascotas", "/mascotas"  %></li>
+                <li><%= link_to "Hospitalización", "/hospitalizaciones"  %>
+              <%else%>
+                <li><%= link_to "Servicios", "/servicios"  %></li>
+                <li><%= link_to "Mascotas", "/mascotas"  %></li>
+                <li><%= link_to "Hospitalización", "/hospitalizaciones"  %>
+                <li><%= link_to "Almacenes", "#"  %></li>
+              <%end%>
+        <%end%>   
           </ul>
         </div>
       </div>

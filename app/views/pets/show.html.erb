@@ -1,6 +1,6 @@
 <%- model_class = Pet -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1>Mascota</h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -15,11 +15,34 @@
   <dt><strong><%= model_class.human_attribute_name("Fecha de nacimiento") %>:</strong></dt>
   <dd><%= @pet.bornDate %></dd>
   <dt><strong><%= model_class.human_attribute_name("Id Cliente") %>:</strong></dt>
-  <dd><%= @pet.client_id %></dd>
+  <dd><%= @pet.client.name %></dd>
 </dl>
 
+<h4>Historico de Servicios</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre del veterinario</th>
+      <th>Nombre del Servicio</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pet.registers.each do |register| %>
+      <tr>
+        <td><%= register.veterinary.name %></td>
+        <td><%= register.service.name %></td>
+        <td><%= register.registerDate %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "Internar", new_internship_path(id: @pet.id) %>
+
+
+<%= link_to "Internar", new_internship_path(id: @pet.id), :class => 'btn btn-default' %>
+<%= link_to "Servicio", "servicio/#{@pet.id}", :class => 'btn btn-default' %>
+
 <%= link_to t('.back', :default => t("Volver")),
               pets_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("Editar")),

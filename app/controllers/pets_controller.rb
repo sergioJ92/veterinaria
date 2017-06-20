@@ -18,6 +18,25 @@ class PetsController < ApplicationController
     end
   end
 
+  def service
+    @pet = Pet.find(params['id'])
+    @register = Register.new
+  end
+
+  def saveService
+    values = params['post']
+    @register = Register.new
+    @register.pet_id = values['pet_id']
+    @register.service_id = values['service_id']
+    @register.veterinary_id = values['veterinary_id']
+    @register.registerDate = values['registerDate']
+    respond_to do |format|
+      if @register.save
+        format.html { redirect_to pets_path, notice: 'successfully register.' }
+      end
+    end    
+  end
+
   # GET /pets/1
   # GET /pets/1.json
   def show

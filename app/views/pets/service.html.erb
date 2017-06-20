@@ -1,0 +1,33 @@
+<h1><%= @pet.name %></h1>
+
+<%= form_for @register, as: :post, url: 'save', html: { class: "new_post", id: "new_post" } do |f| %>
+<%# form_for @register ,:html=>{ :class => "form-horizontal" } do |f|%>
+
+  <div class="form-group">
+    <%= f.label "Servicio", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :service_id, Service.all, :id, :name, {}, {:class => 'form-control'} %>
+    </div>
+    <%=f.error_span(:ci) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "register Date", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :registerDate, :class => 'form-control', :type=>'date'%>
+    </div>
+    <%=f.error_span(:ci) %>
+  </div>
+
+  <%= f.hidden_field :veterinary_id, :value => current_user.data_id %>
+  <%= f.hidden_field :pet_id, :value => @pet.id %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit 'Aceptar', :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("Cancelar")),
+                pets_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
