@@ -4,7 +4,18 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = []
+    if !current_user.nil?
+      id = current_user.data_id
+      if !id.nil?
+        @client = Client.find(id)
+        @pets = @client.pets
+      end
+      if current_user.role.name == 'administrador'
+        @pets = Pet.all
+      end
+    end
+
   end
 
   # GET /pets/1

@@ -38,13 +38,23 @@
       </div>
     </div>
 
-    <%if current_user == nil%>
-      <h3><%= current_user.role.name %></h3>
-    <%end%>
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
+          <%# current_user.role.name %>
+          <%if !current_user.nil? %>
+          <%if current_user.data_id.nil? %>
+              <%if current_user.role.name == 'cliente' %>
+                <h3>Registre Sus datos en cliente </h3>
+                <%= link_to 'Registre Sus Datos',new_client_path %>
+              <%elsif current_user.role.name == 'veterinario' %>
+                <h3>Registre Sus datos en Veterinario </h3>
+                <%=link_to "Registre Sus Datos",new_veterinary_path %>
+              <%end%>
+          <%end%>
+          <%end%>
+          <%# current_user.to_json %>          
           <%= yield %>
         </div>
         <div class="col-lg-3">

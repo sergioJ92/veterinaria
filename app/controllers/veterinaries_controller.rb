@@ -28,6 +28,8 @@ class VeterinariesController < ApplicationController
 
     respond_to do |format|
       if @veterinary.save
+        current_user.data_id = @veterinary.id
+        current_user.save
         format.html { redirect_to @veterinary, notice: 'Veterinary was successfully created.' }
         format.json { render :show, status: :created, location: @veterinary }
       else

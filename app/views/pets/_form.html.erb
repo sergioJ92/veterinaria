@@ -51,7 +51,7 @@
     <%=f.error_span(:bornDate) %>
   </div>
 
-  <%= f.hidden_field :client_id, :value => current_user.id %>
+  <%= f.hidden_field :client_id, :value => current_user.data_id %>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

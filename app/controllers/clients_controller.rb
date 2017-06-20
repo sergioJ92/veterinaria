@@ -28,7 +28,9 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        current_user.data_id = @client.id
+        current_user.save
+        format.html { redirect_to pets_path, notice: 'Client was successfully created.' }
         format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new }
