@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vacunas
   resources :products
   resources :type_products
   devise_for :users

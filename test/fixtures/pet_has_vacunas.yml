@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vacuna: one
+  pet: one
+
+two:
+  vacuna: two
+  pet: two

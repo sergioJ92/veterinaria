@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619220722) do
+ActiveRecord::Schema.define(version: 20170625181827) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20170619220722) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pet_id"], name: "index_internships_on_pet_id"
+  end
+
+  create_table "pet_has_vacunas", force: :cascade do |t|
+    t.integer "vacuna_id"
+    t.integer "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_pet_has_vacunas_on_pet_id"
+    t.index ["vacuna_id"], name: "index_pet_has_vacunas_on_vacuna_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -102,6 +111,13 @@ ActiveRecord::Schema.define(version: 20170619220722) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
+  end
+
+  create_table "vacunas", force: :cascade do |t|
+    t.string "name"
+    t.text "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "veterinaries", force: :cascade do |t|
