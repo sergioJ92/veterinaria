@@ -1,0 +1,24 @@
+<h1><%= @pet.name %></h1>
+
+<%= form_for @pet_vacuna, as: :post, url: 'save', html: { class: "new_post", id: "new_post" } do |f| %>
+
+  <div class="form-group">
+    <%= f.label "Vacuna", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :vacuna_id, Vacuna.all, :id, :name, {}, {:class => 'form-control'} %>
+    </div>
+    <%=f.error_span(:ci) %>
+  </div>
+
+  <%= f.hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= f.hidden_field :pet_id, :value => @pet.id %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit 'Aceptar', :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("Cancelar")),
+                pets_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

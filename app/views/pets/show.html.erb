@@ -43,6 +43,7 @@
   <%if current_user.role.name != 'cliente' %>
     <%= link_to "Internar", new_internship_path(id: @pet.id), :class => 'btn btn-default' %>
     <%= link_to "Servicio", "servicio/#{@pet.id}", :class => 'btn btn-default' %>
+    <%= link_to "Vacuna", "vacuna/#{@pet.id}", :class => 'btn btn-default' %>
   <%end%>
 <%end%>
 

@@ -46,7 +46,7 @@
   <div class="form-group">
     <%= f.label "Fecha de nacimiento", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_select :bornDate, :class => 'form-control' %>
+      <%= f.text_field :bornDate, :type=>'date', :class => 'form-control' %>
     </div>
     <%=f.error_span(:bornDate) %>
   </div>
