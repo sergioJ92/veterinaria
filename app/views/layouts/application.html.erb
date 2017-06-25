@@ -30,11 +30,13 @@
           <%if !current_user.nil? %>
               <%if current_user.role.name == 'cliente' %>
                 <li><%= link_to "Inicio", "/mascotas"  %></li>    
-                <li><%= link_to "Almacenes", "#"  %></li>
               <%elsif current_user.role.name == 'veterinario' %>
                 <li><%= link_to "Servicios", "/servicios"  %></li>
                 <li><%= link_to "Mascotas", "/mascotas"  %></li>
                 <li><%= link_to "Hospitalización", "/hospitalizaciones"  %>
+                <li><%= link_to "Ingresos", "/ingresos"  %></li>
+              <%elsif current_user.role.name == 'almacenero' %>  
+                <li><%= link_to "Almacenes", "/products"  %></li>
               <%else%>
                 <li><%= link_to "Servicios", "/servicios"  %></li>
                 <li><%= link_to "Mascotas", "/mascotas"  %></li>

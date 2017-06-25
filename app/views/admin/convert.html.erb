@@ -9,6 +9,7 @@
       <th>Rol</th>
       <th>Id Asociado</th>
       <th>Convertir Veterinario</th>
+      <th>Convertir Alamacenero</th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@
         <td><%= user.role.name %></td>
         <td><%= user.data_id %></td>
         <td><%= link_to 'Convertir Veterinario', id: user.id %></td>
+        <td><%= link_to 'Convertir Almacenero', '/admin/users_convert/'+user.id.to_s%></td>
       </tr>
     <% end %>
   </tbody>

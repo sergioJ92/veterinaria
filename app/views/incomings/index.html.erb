@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ingresos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Detalle</th>
+      <th>Fecha</th>
+      <th>Monto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incomings.each do |incoming| %>
+      <tr>
+        <td><%= incoming.details %></td>
+        <td><%= incoming.date %></td>
+        <td><%= incoming.ammount %></td>
+        <td><%= link_to 'Mostrar', incoming %></td>
+        <td><%= link_to 'Editar', edit_incoming_path(incoming) %></td>
+        <td><%= link_to 'Eliminar', incoming, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td>Total:</td>
+      <td><%=@total%></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Ingreso', new_incoming_path %>

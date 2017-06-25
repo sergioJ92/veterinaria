@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @incoming.details %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @incoming.date %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @incoming.ammount %>
+</p>
+
+<%= link_to 'Editar', edit_incoming_path(@incoming) %> |
+<%= link_to 'Volver', incomings_path %>

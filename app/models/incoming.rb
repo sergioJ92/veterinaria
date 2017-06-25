@@ -1,0 +1,2 @@
+class Incoming < ApplicationRecord
+end
