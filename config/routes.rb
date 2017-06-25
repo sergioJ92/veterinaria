@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :vacunas
   resources :products
   resources :type_products
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   resources :internships, :path => "hospitalizaciones"  
   resources :pets, :path => "mascotas"  
   resources :clients, :path => "clientes"  
-  root 'pets#index'
+  root 'static_pages#home'
   get 'admin/users' => 'admin#convert'
   get 'mascotas/servicio/:id' => 'pets#service'
   get '/mascotas/vacuna/:id' => 'pets#vacuna'
