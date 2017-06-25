@@ -1,8 +1,9 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <p id="notice"><%= notice %></p>
 
 <h1>Tipo de productos</h1>
 
-<table class="table table-striped">
+<table class="table table-striped centered">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -13,15 +14,19 @@
   <tbody>
     <% @type_products.each do |type_product| %>
       <tr>
+
         <td><%= type_product.name %></td>
-        <td><%= link_to 'Show', type_product %></td>
-        <td><%= link_to 'Edit', edit_type_product_path(type_product) %></td>
-        <td><%= link_to 'Destroy', type_product, method: :delete, data: { confirm: 'Estas seguro que quieres eliminar el Tipo de producto'} %></td>
+        <!--td><%= link_to 'Mostrar', type_product, :class=>"waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Editar', edit_type_product_path(type_product) %></td>
+        <td><%= link_to 'Eliminar', type_product, method: :delete, data: { confirm: 'Estas seguro que quieres eliminar el Tipo de producto'}%></td-->
+        <td><%= link_to '<i class="material-icons">visibility</i> Do it@'.html_safe, type_product, :class=>"btn-floating waves-effect waves-light green" %>
+            <%= link_to '<i class="material-icons">edit</i> Do it@'.html_safe, edit_type_product_path(type_product), :class=>"btn-floating waves-effect waves-light green"%>
+            <%= link_to '<i class="material-icons">delete</i> Do it@'.html_safe, type_product, method: :delete, data: { confirm: 'Estas seguro que quieres eliminar el Tipo de producto'}, :class=>"btn-floating waves-effect waves-light red "%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'nuevo tipo producto', new_type_product_path, :class => 'btn btn-primary' %>

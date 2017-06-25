@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<p class="flow-text">
+  <strong>Nombre:</strong>
   <%= @type_product.name %>
 </p>
 
-<%= link_to 'Edit', edit_type_product_path(@type_product) %> |
-<%= link_to 'Back', type_products_path %>
+<%= link_to 'Editar', edit_type_product_path(@type_product), :class=>"waves-effect waves-light btn" %> |
+<%= link_to 'Atras', type_products_path, :class=>"waves-effect waves-light btn" %>
