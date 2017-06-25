@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vacunas
   resources :products
   resources :type_products
   devise_for :users
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   root 'pets#index'
   get 'admin/users' => 'admin#convert'
   get 'mascotas/servicio/:id' => 'pets#service'
+  get '/mascotas/vacuna/:id' => 'pets#vacuna'
   post 'mascotas/servicio/save' => 'pets#saveService'
+  post 'mascotas/vacuna/save' => 'pets#saveVacuna'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

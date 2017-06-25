@@ -18,9 +18,26 @@ class PetsController < ApplicationController
     end
   end
 
+  def vacuna
+    @pet = Pet.find(params['id'])
+    @pet_vacuna = PetHasVacuna.new
+  end
+
   def service
     @pet = Pet.find(params['id'])
     @register = Register.new
+  end
+
+  def saveVacuna
+    values = params['post']
+    @register = PetHasVacuna.new
+    @register.pet_id = values['pet_id']
+    @register.vacuna_id = values['vacuna_id']
+    respond_to do |format|
+      if @register.save
+        format.html { redirect_to pets_path, notice: 'successfully register.' }
+      end
+    end
   end
 
   def saveService
