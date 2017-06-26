@@ -29,12 +29,10 @@
           <ul class="nav navbar-nav">
           <%if !current_user.nil? %>
               <%if current_user.role.name == 'cliente' %>
-<<<<<<< HEAD
+
                 <li><%= link_to "Mascotas", "/mascotas"  %></li>    
                 <li><%= link_to "Almacenes", "/products"  %></li>
-=======
-                <li><%= link_to "Inicio", "/mascotas"  %></li>    
->>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
+
               <%elsif current_user.role.name == 'veterinario' %>
                 <li><%= link_to "Servicios", "/servicios"  %></li>
                 <li><%= link_to "Mascotas", "/mascotas"  %></li>

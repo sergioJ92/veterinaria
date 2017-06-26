@@ -21,7 +21,7 @@
         <div class="col s12 m5">
           <div class="card">
             <div class="card-image">
-              <img src="dogchow.jpg">
+              <img src="peinado.jpg">
               <span class="card-title"><%= service.name%></span>
             </div>
             <div class="card-content">
@@ -31,8 +31,8 @@
               <p></p>
             </div>
             <div class="card-action">
-                <%= link_to t('.show', :default => t("Mostrar")),
-                            service_path(service)%>
+                <!---<%= link_to t('.show', :default => t("Mostrar")),
+                            service_path(service)%>-->
                 <%= link_to t('.edit', :default => t("Editar")),
                             edit_service_path(service)%>
                 <%= link_to t('.destroy', :default => t("Eliminar")),

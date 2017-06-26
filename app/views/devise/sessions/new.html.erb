@@ -1,45 +1,29 @@
-<<<<<<< HEAD
-<h2>Iniciar sesion</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :correo %><br />
-=======
 <h2>Iniciar Sesion</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label "Email" %><br />
->>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-<<<<<<< HEAD
-    <%= f.label :contraseña %><br />
-=======
+
     <%= f.label "Contraseña" %><br />
->>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
-<<<<<<< HEAD
-      <%= f.label :recordarme %>
-=======
       <%= f.label "Recordarme"%>
->>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     </div>
   <% end -%>
 
   <div class="actions">
-<<<<<<< HEAD
+
     <%= f.submit "Iniciar sesion" %>
-=======
-    <%= f.submit "Iniciar Sesion" %>
->>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
+
   </div>
 <% end %>
 
