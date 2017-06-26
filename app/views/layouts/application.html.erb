@@ -29,7 +29,7 @@
           <ul class="nav navbar-nav">
           <%if !current_user.nil? %>
               <%if current_user.role.name == 'cliente' %>
-                <li><%= link_to "Inicio", "/mascotas"  %></li>    
+                <li><%= link_to "Mascotas", "/mascotas"  %></li>    
                 <li><%= link_to "Almacenes", "/products"  %></li>
               <%elsif current_user.role.name == 'veterinario' %>
                 <li><%= link_to "Servicios", "/servicios"  %></li>
