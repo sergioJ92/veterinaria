@@ -1,28 +1,50 @@
+<<<<<<< HEAD
 <h2>Registro de usuario</h2>
+=======
+<h2>Crear Cuenta</h2>
+>>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :Correo %><br />
+=======
+    <%= f.label "Email" %><br />
+>>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caracteres minimo)</em>
+=======
+    <%= f.label "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+>>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
+<<<<<<< HEAD
     <%= f.label :Confirmacion_de_contraseña %><br />
+=======
+    <%= f.label "Repetir contraseña" %><br />
+>>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
+<<<<<<< HEAD
     <%= f.submit "Registrar" %>
+=======
+    <%= f.submit "Registrarse" %>
+>>>>>>> 2eef685c408dbe60ba02951295ddb5467f043290
   </div>
 <% end %>
 
