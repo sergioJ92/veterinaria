@@ -69,6 +69,6 @@ class LabsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
-      params.require(:lab).permit(:pet_id, :name, :type, :description, :imagen)
+      params.require(:lab).permit(:pet_id, :name, :lab_type, :description, :imagen)
     end
 end
