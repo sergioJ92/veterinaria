@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laboratorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mascota</th>
+      <th>Nombre del Laboratorio</th>
+      <th>Tipo de Exámen</th>
+      <th>Descripción</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labs.each do |lab| %>
+      <tr>
+        <td><%= lab.pet.name %></td>
+        <td><%= lab.name %></td>
+        <td><%= lab.lab_type %></td>
+        <td><%= lab.description %></td>
+        <td><%= link_to 'Ver', lab %></td>
+        <td><%= link_to 'Editar', edit_lab_path(lab) %></td>
+        <td><%= link_to 'Eliminar', lab, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Laboratorio', new_lab_path %>

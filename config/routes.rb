@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :labs, :path => "laboratorios"
   resources :incomings, :path => "ingresos"
   resources :vacunas
   resources :products
