@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mascota:</strong>
+  <%= @lab.pet.name %>
+</p>
+
+<p>
+  <strong>Nombre del Estudio:</strong>
+  <%= @lab.name %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @lab.lab_type %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @lab.description %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= link_to image_tag(@lab.imagen.url, class: 'media-object',:width => 100, :height => 100), @lab.imagen.url, target: '_blank' %>
+</p>
+
+
+<%= link_to 'Editar', edit_lab_path(@lab) %> |
+<%= link_to 'Volver', labs_path %>
