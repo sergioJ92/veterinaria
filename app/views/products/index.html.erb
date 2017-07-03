@@ -15,12 +15,16 @@
   </thead>
 
   <tbody>
+    <% imagenes = ["dogchow.jpg","peinado.jpg"]%>
+    <% valor = 0%>
     <% @products.each do |product| %>
 
         <div class="col s12 m5">
           <div class="card">
             <div class="card-image">
-              <img src="dogchow.jpg">
+                          
+              <img src=<%=imagenes[valor]%>>
+              <% valor = valor+1%>
               <span class="card-title"><%= product.name%></span>
               
             </div>

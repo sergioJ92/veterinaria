@@ -18,14 +18,14 @@
   <div class="form-group">
     <%= f.label 'Fecha de hospitalización', :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_select :intership_date, :class => 'form-control' %>
+      <%= f.text_field :intership_date, :class => 'form-control', :type => 'date' %>
     </div>
     <%=f.error_span(:intership_date) %>
   </div>
   <div class="form-group">
     <%= f.label 'Fecha de Alta', :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_select :dischargeDate, :class => 'form-control' %>
+      <%= f.text_field :dischargeDate, :class => 'form-control', :type => 'date' %>
     </div>
     <%=f.error_span(:dischargeDate) %>
   </div>
